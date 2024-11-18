@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyrkof's Ultimate personal form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container form-container">
+        <h1>Zyrkof's Ultimate personal form</h1>
+        <form onsubmit="handleSubmit(event)" autocomplete="off">
+            <fieldset>
+                <legend>Informations Personnelles</legend>
+                <label for="firstName">Prénom:</label>
+                <input type="text" id="firstName" name="Prénom" placeholder="Entrez votre prénom" required autocomplete="off">
+
+                <label for="lastName">Nom:</label>
+                <input type="text" id="lastName" name="Nom" placeholder="Entrez votre nom" required autocomplete="off">
+
+                <label for="dob">Date de naissance:</label>
+                <input type="date" id="dob" name="Date de naissance" required autocomplete="off">
+
+                <label for="gender">Genre:</label>
+                <select id="gender" name="Genre" required>
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                    <option value="other">Autre</option>
+                </select>
+
+                <label for="nationality">Nationalité:</label>
+                <input type="text" id="nationality" name="Nationalité" placeholder="Entrez votre nationalité" required autocomplete="off">
+
+                <label for="height">Taille (cm):</label>
+                <input type="number" id="height" name="Taille (cm)" placeholder="Entrez votre taille" required autocomplete="off">
+
+                <label for="weight">Poids (kg):</label>
+                <input type="number" id="weight" name="Poids (kg)" placeholder="Entrez votre poids" required autocomplete="off">
+
+                <label for="shoeSize">Pointure (EUR):</label>
+                <select id="shoeSize" name="Pointure (EUR)" required>
+                    <!-- Les options seront ajoutées dynamiquement par JavaScript -->
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Coordonnées</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" placeholder="Entrez votre email" required autocomplete="off">
+
+                <label for="phone">Téléphone:</label>
+                <div id="phone-wrapper" style="display: flex;">
+                    <select id="phoneCountry" name="Indicatif" style="flex: 1;">
+                        <option value="+33" data-flag="🇫🇷">🇫🇷 +33 France</option>
+                        <option value="+1" data-flag="🇺🇸">🇺🇸 +1 USA</option>
+                        <!-- Ajoutez plus de pays ici -->
+                    </select>
+                    <input type="tel" id="phone" name="Téléphone" placeholder="6 12 34 56 78" style="flex: 3;" required autocomplete="off" maxlength="12">
+                </div>
+
+                <label for="address">Adresse:</label>
+                <input type="text" id="address" name="Adresse" placeholder="Entrez votre adresse" required autocomplete="off">
+
+                <label for="country">Pays:</label>
+                <select id="country" name="Pays" required>
+                    <option value>Sélectionnez un pays</option>
+                    <option value="France">France</option>
+                    <option value="USA">USA</option>
+                    <!-- Ajoutez plus de pays ici -->
+                </select>
+
+                <label for="region">Région:</label>
+                <select id="region" name="Région" required>
+                    <option value>Sélectionnez une région</option>
+                </select>
+
+                <label for="department">Département:</label>
+                <select id="department" name="Département" required>
+                    <option value>Sélectionnez un département</option>
+                </select>
+
+                <label for="city">Ville:</label>
+                <select id="city" name="Ville" required>
+                    <option value>Sélectionnez une ville</option>
+                </select>
+
+                <label for="zipcode">Code postal:</label>
+                <input type="text" id="zipcode" name="Code postal" placeholder="Entrez votre code postal" required autocomplete="off">
+            </fieldset>
+
+            <fieldset>
+                <legend>Informations Professionnelles</legend>
+                <label for="occupation">Profession:</label>
+                <input type="text" id="occupation" name="Profession" placeholder="Entrez votre profession" required autocomplete="off">
+
+                <label for="company">Entreprise:</label>
+                <input type="text" id="company" name="Entreprise" placeholder="Entrez le nom de votre entreprise" autocomplete="off">
+
+                <label for="workEmail">Email Professionnel:</label>
+                <input type="email" id="workEmail" name="Email Professionnel" placeholder="Entrez votre email professionnel" autocomplete="off">
+
+                <label for="workPhone">Téléphone Professionnel:</label>
+                <div id="work-phone-wrapper" style="display: flex;">
+                    <select id="workPhoneCountry" name="Indicatif Professionnel" style="flex: 1;">
+                        <option value="+33" data-flag="🇫🇷">🇫🇷 +33 France</option>
+                        <option value="+1" data-flag="🇺🇸">🇺🇸 +1 USA</option>
+                        <!-- Ajoutez plus de pays ici -->
+                    </select>
+                    <input type="tel" id="workPhone" name="Téléphone Professionnel" placeholder="6 12 34 56 78" style="flex: 3;" autocomplete="off" maxlength="12">
+                </div>
+
+                <label for="workAddress">Adresse Professionnelle:</label>
+                <input type="text" id="workAddress" name="Adresse Professionnelle" placeholder="Entrez votre adresse professionnelle" autocomplete="off">
+            </fieldset>
+
+            <fieldset>
+                <legend>Informations Médicales</legend>
+                <label for="bloodType">Groupe sanguin:</label>
+                <select id="bloodType" name="Groupe sanguin" required>
+                    <option value="">Sélectionnez votre groupe sanguin</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="Autre">Autre</option>
+                </select>
+
+                <label for="allergies">Allergies:</label>
+                <textarea id="allergies" name="Allergies" placeholder="Entrez vos allergies" autocomplete="off"></textarea>
+
+                <label for="medications">Médicaments:</label>
+                <textarea id="medications" name="Médicaments" placeholder="Entrez vos médicaments" autocomplete="off"></textarea>
+
+                <label for="healthConditions">Conditions de santé:</label>
+                <textarea id="healthConditions" name="Conditions de santé" placeholder="Entrez vos conditions de santé" autocomplete="off"></textarea>
+            </fieldset>
+
+            <button type="submit">Soumettre</button>
+            <button type="button" onclick="fillAllFields()">Fill All</button>
+            <p class="error-message"></p>
+        </form>
+    </div>
+
+    <div class="container result-container">
+        <h2>Informations Soumises</h2>
+        <div class="result-content"></div>
+        <button onclick="window.location.reload()">Retour</button>
+    </div>
+    <script type="text/javascript" src="test.js"></script>
+</body>
+</html>
